@@ -1,0 +1,1352 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AURA NILA | Boutique Hotel</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f7f4ef;
+    color:#27231f;
+}
+
+h1,h2,h3{
+    font-family:'Cormorant Garamond',serif;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* NAVIGATION */
+
+nav{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:100;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:28px 6%;
+    color:white;
+}
+
+.logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:30px;
+    letter-spacing:4px;
+}
+
+.nav-links{
+    display:flex;
+    gap:32px;
+    font-size:13px;
+    letter-spacing:1.5px;
+}
+
+.nav-links a{
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    opacity:.65;
+}
+
+.book-btn{
+    border:1px solid rgba(255,255,255,.8);
+    padding:12px 22px;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    min-height:650px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    background:
+    linear-gradient(rgba(20,18,15,.38),rgba(20,18,15,.58)),
+    url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2000&q=90")
+    center/cover;
+}
+
+.hero-content{
+    max-width:850px;
+    padding:30px;
+}
+
+.hero-small{
+    font-size:12px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(65px,10vw,130px);
+    font-weight:400;
+    letter-spacing:3px;
+    line-height:.9;
+}
+
+.hero p{
+    margin:28px auto;
+    max-width:600px;
+    font-size:16px;
+    line-height:1.8;
+    font-weight:300;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 28px;
+    border:1px solid white;
+    color:white;
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:white;
+    color:#27231f;
+}
+
+/* BOOKING BAR */
+
+.booking{
+    background:#fff;
+    width:88%;
+    margin:-45px auto 0;
+    position:relative;
+    z-index:20;
+    padding:25px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr) auto;
+    gap:15px;
+    box-shadow:0 12px 35px rgba(0,0,0,.12);
+}
+
+.booking label{
+    display:block;
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:8px;
+    color:#777;
+}
+
+.booking input,
+.booking select{
+    width:100%;
+    padding:12px 8px;
+    border:none;
+    border-bottom:1px solid #ddd;
+    background:transparent;
+    outline:none;
+}
+
+.booking button{
+    background:#27231f;
+    color:white;
+    border:none;
+    padding:15px 25px;
+    cursor:pointer;
+    letter-spacing:2px;
+}
+
+/* INTRO */
+
+.intro{
+    padding:130px 8%;
+    text-align:center;
+    max-width:1000px;
+    margin:auto;
+}
+
+.eyebrow{
+    font-size:11px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:#8b6d52;
+    margin-bottom:18px;
+}
+
+.intro h2{
+    font-size:55px;
+    font-weight:500;
+    margin-bottom:25px;
+}
+
+.intro p{
+    font-size:16px;
+    line-height:2;
+    color:#666;
+}
+
+/* FEATURES */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    margin:0 6% 120px;
+}
+
+.feature{
+    padding:50px 35px;
+    text-align:center;
+    border-right:1px solid #ddd5ca;
+}
+
+.feature:last-child{
+    border-right:none;
+}
+
+.feature-icon{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.feature h3{
+    font-size:27px;
+    margin-bottom:12px;
+}
+
+.feature p{
+    color:#777;
+    font-size:14px;
+    line-height:1.8;
+}
+
+/* SECTION */
+
+.section{
+    padding:110px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:58px;
+    font-weight:500;
+}
+
+.section-title p{
+    color:#777;
+    margin-top:15px;
+}
+
+/* ROOMS */
+
+.rooms{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    overflow:hidden;
+}
+
+.card-image{
+    height:350px;
+    overflow:hidden;
+}
+
+.card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .7s;
+}
+
+.card:hover img{
+    transform:scale(1.06);
+}
+
+.card-content{
+    padding:28px;
+}
+
+.card-content h3{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.card-content p{
+    color:#777;
+    line-height:1.7;
+    font-size:14px;
+}
+
+.card-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:22px;
+}
+
+.price{
+    font-size:14px;
+}
+
+.explore{
+    font-size:11px;
+    letter-spacing:2px;
+    border-bottom:1px solid #333;
+    padding-bottom:4px;
+}
+
+/* EXPERIENCE */
+
+.experience{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    min-height:650px;
+}
+
+.experience-image{
+    background:
+    url("https://images.unsplash.com/photo-1572331165267-854da2b10ccc?auto=format&fit=crop&w=1400&q=90")
+    center/cover;
+}
+
+.experience-content{
+    background:#e9e2d7;
+    padding:90px 10%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.experience-content h2{
+    font-size:58px;
+    font-weight:500;
+    margin-bottom:20px;
+}
+
+.experience-content p{
+    color:#625b53;
+    line-height:2;
+    margin-bottom:25px;
+}
+
+.text-link{
+    width:max-content;
+    border-bottom:1px solid #333;
+    padding-bottom:7px;
+    letter-spacing:2px;
+    font-size:11px;
+}
+
+/* SMART HOTEL */
+
+.smart{
+    background:#26231f;
+    color:white;
+    padding:120px 7%;
+}
+
+.smart-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.smart h2{
+    font-size:65px;
+    font-weight:400;
+}
+
+.smart p{
+    color:#c8c2ba;
+    line-height:2;
+    margin:25px 0;
+}
+
+.smart-features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.smart-box{
+    border:1px solid #555;
+    padding:25px;
+}
+
+.smart-box h3{
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.smart-box p{
+    font-size:13px;
+    margin:0;
+}
+
+/* RESTAURANT */
+
+.restaurant{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.restaurant-image{
+    min-height:600px;
+    background:
+    url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1400&q=90")
+    center/cover;
+}
+
+.restaurant-content{
+    padding:90px 10%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.restaurant-content h2{
+    font-size:62px;
+    margin-bottom:20px;
+}
+
+.restaurant-content p{
+    color:#777;
+    line-height:2;
+    margin-bottom:25px;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+}
+
+.gallery img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+/* AI CONCIERGE */
+
+.ai-button{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:#27231f;
+    color:white;
+    border:none;
+    font-size:25px;
+    cursor:pointer;
+    z-index:200;
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+}
+
+.ai-chat{
+    position:fixed;
+    right:25px;
+    bottom:105px;
+    width:330px;
+    background:white;
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+    z-index:199;
+    display:none;
+}
+
+.ai-header{
+    background:#27231f;
+    color:white;
+    padding:20px;
+}
+
+.ai-header h3{
+    font-size:24px;
+}
+
+.ai-body{
+    padding:20px;
+}
+
+.ai-body p{
+    color:#666;
+    font-size:14px;
+    line-height:1.6;
+    margin-bottom:15px;
+}
+
+.ai-options button{
+    width:100%;
+    padding:12px;
+    margin:5px 0;
+    border:1px solid #ddd;
+    background:#f7f4ef;
+    cursor:pointer;
+    text-align:left;
+}
+
+.ai-response{
+    margin-top:15px;
+    padding:12px;
+    background:#eee9e1;
+    font-size:13px;
+    display:none;
+}
+
+/* FOOTER */
+
+footer{
+    background:#171512;
+    color:white;
+    padding:80px 7% 30px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:50px;
+    padding-bottom:50px;
+}
+
+.footer-logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:40px;
+    letter-spacing:4px;
+}
+
+footer p{
+    color:#aaa;
+    font-size:13px;
+    line-height:1.8;
+    margin-top:15px;
+}
+
+footer h4{
+    font-size:12px;
+    letter-spacing:2px;
+    margin-bottom:20px;
+}
+
+footer a{
+    display:block;
+    color:#aaa;
+    font-size:13px;
+    margin-bottom:12px;
+}
+
+.copyright{
+    border-top:1px solid #333;
+    padding-top:25px;
+    color:#777;
+    font-size:11px;
+}
+
+/* MODAL */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    z-index:500;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal-box{
+    background:#fff;
+    width:500px;
+    max-width:100%;
+    padding:40px;
+}
+
+.modal-box h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.modal-box input,
+.modal-box select{
+    width:100%;
+    padding:14px;
+    margin:7px 0;
+    border:1px solid #ddd;
+}
+
+.modal-box button{
+    width:100%;
+    padding:15px;
+    margin-top:15px;
+    background:#27231f;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+.close{
+    float:right;
+    cursor:pointer;
+    font-size:20px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .booking{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .rooms,
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .feature{
+        border-right:none;
+        border-bottom:1px solid #ddd5ca;
+    }
+
+    .experience,
+    .restaurant,
+    .smart-grid{
+        grid-template-columns:1fr;
+    }
+
+    .experience-image,
+    .restaurant-image{
+        min-height:450px;
+    }
+
+    .smart-features{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:65px;
+    }
+
+    .booking{
+        width:92%;
+        grid-template-columns:1fr;
+        margin-top:20px;
+    }
+
+    .intro{
+        padding:100px 7%;
+    }
+
+    .intro h2,
+    .section-title h2{
+        font-size:43px;
+    }
+
+    .section{
+        padding:80px 6%;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .gallery img{
+        height:300px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .ai-chat{
+        right:15px;
+        left:15px;
+        width:auto;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="logo">AURA NILA</div>
+
+<div class="nav-links">
+<a href="#stay">STAY</a>
+<a href="#dining">DINE</a>
+<a href="#experience">EXPERIENCE</a>
+<a href="#smart">SMART STAY</a>
+<a href="#gallery">GALLERY</a>
+<a href="#contact">CONTACT</a>
+<a href="#" class="book-btn" onclick="openBooking()">BOOK NOW</a>
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-small">TIRUCHIRAPPALLI • TAMIL NADU</div>
+
+<h1>AURA NILA</h1>
+
+<p>
+A contemporary boutique hotel where modern luxury,
+Tamil culture and intelligent hospitality come together.
+</p>
+
+<div class="hero-buttons">
+<a href="#stay" class="btn">Explore Stay</a>
+<a href="#" class="btn" onclick="openBooking()">Book Your Stay</a>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BOOKING BAR -->
+
+<div class="booking">
+
+<div>
+<label>Check In</label>
+<input type="date" id="checkin">
+</div>
+
+<div>
+<label>Check Out</label>
+<input type="date" id="checkout">
+</div>
+
+<div>
+<label>Guests</label>
+<select>
+<option>1 Guest</option>
+<option selected>2 Guests</option>
+<option>3 Guests</option>
+<option>4 Guests</option>
+</select>
+</div>
+
+<div>
+<label>Room</label>
+<select>
+<option>Aura Room</option>
+<option>Nila Suite</option>
+<option>Heritage Suite</option>
+</select>
+</div>
+
+<button onclick="openBooking()">CHECK AVAILABILITY</button>
+
+</div>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+<div class="eyebrow">THE AURA NILA EXPERIENCE</div>
+
+<h2>More than a stay.<br>A feeling to remember.</h2>
+
+<p>
+AURA NILA is designed around the idea that a hotel should be
+experienced, not simply occupied. Every space combines calm
+architecture, thoughtful hospitality, Tamil-inspired details
+and intelligent technology to create a stay that feels personal.
+</p>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<div class="features">
+
+<div class="feature">
+<div class="feature-icon">✦</div>
+<h3>Thoughtful Luxury</h3>
+<p>
+Elegant rooms, natural materials and carefully designed spaces
+create a calm premium environment.
+</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">◌</div>
+<h3>Local Soul</h3>
+<p>
+Contemporary design inspired by Tamil culture, craftsmanship
+and the landscapes of the Kaveri region.
+</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">⌁</div>
+<h3>Intelligent Stay</h3>
+<p>
+AI-powered services make your stay more convenient,
+personalized and effortless.
+</p>
+</div>
+
+</div>
+
+
+<!-- ROOMS -->
+
+<section class="section" id="stay">
+
+<div class="section-title">
+
+<div class="eyebrow">STAY</div>
+
+<h2>Rooms & Suites</h2>
+
+<p>
+Spaces designed for rest, focus and connection.
+</p>
+
+</div>
+
+<div class="rooms">
+
+
+<div class="card">
+
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=90">
+</div>
+
+<div class="card-content">
+
+<h3>Aura Room</h3>
+
+<p>
+A serene king room with smart controls,
+workspace and calming city views.
+</p>
+
+<div class="card-bottom">
+
+<span class="price">From ₹8,500 / night</span>
+
+<span class="explore">EXPLORE</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=90">
+</div>
+
+<div class="card-content">
+
+<h3>Nila Suite</h3>
+
+<p>
+A spacious suite with separate lounge,
+premium amenities and personalized smart-room experience.
+</p>
+
+<div class="card-bottom">
+
+<span class="price">From ₹12,500 / night</span>
+
+<span class="explore">EXPLORE</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-image">
+<img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=90">
+</div>
+
+<div class="card-content">
+
+<h3>Heritage Suite</h3>
+
+<p>
+A signature suite blending contemporary comfort
+with subtle Tamil-inspired design.
+</p>
+
+<div class="card-bottom">
+
+<span class="price">From ₹16,500 / night</span>
+
+<span class="explore">EXPLORE</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section class="experience" id="experience">
+
+<div class="experience-image"></div>
+
+<div class="experience-content">
+
+<div class="eyebrow">RECREATION</div>
+
+<h2>Pause.<br>Breathe.<br>Reset.</h2>
+
+<p>
+Take a quiet morning swim, relax beside the water,
+or discover our AI-powered wellness lounge.
+AURA NILA gives you space to slow down.
+</p>
+
+<a href="#smart" class="text-link">DISCOVER THE EXPERIENCE →</a>
+
+</div>
+
+</section>
+
+
+<!-- SMART HOTEL -->
+
+<section class="smart" id="smart">
+
+<div class="smart-grid">
+
+<div>
+
+<div class="eyebrow">SMART STAY</div>
+
+<h2>Technology that understands you.</h2>
+
+<p>
+At AURA NILA, technology stays quietly in the background.
+AI helps personalize your experience while our people
+remain at the heart of hospitality.
+</p>
+
+</div>
+
+
+<div class="smart-features">
+
+<div class="smart-box">
+<h3>🤖 AI Concierge</h3>
+<p>Personalized recommendations, requests and local experiences.</p>
+</div>
+
+<div class="smart-box">
+<h3>💡 Smart Room</h3>
+<p>Adaptive lighting, climate and automated room controls.</p>
+</div>
+
+<div class="smart-box">
+<h3>🍽 AI Dining</h3>
+<p>Food recommendations based on your preferences.</p>
+</div>
+
+<div class="smart-box">
+<h3>♻ Smart Energy</h3>
+<p>AI-powered energy optimization to reduce waste.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RESTAURANT -->
+
+<section class="restaurant" id="dining">
+
+<div class="restaurant-image"></div>
+
+<div class="restaurant-content">
+
+<div class="eyebrow">NILA TABLE</div>
+
+<h2>Where every meal tells a story.</h2>
+
+<p>
+Experience contemporary dining inspired by Tamil flavours,
+seasonal ingredients and global culinary influences.
+</p>
+
+<p>
+Our AI dining assistant can also recommend dishes
+based on your preferences and dietary choices.
+</p>
+
+<a href="#contact" class="text-link">EXPLORE DINING →</a>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="section" id="gallery">
+
+<div class="section-title">
+
+<div class="eyebrow">A GLIMPSE OF AURA NILA</div>
+
+<h2>Gallery</h2>
+
+</div>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85">
+
+<img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85">
+
+<img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1000&q=85">
+
+<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=85">
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+<div class="footer-grid">
+
+<div>
+
+<div class="footer-logo">AURA NILA</div>
+
+<p>
+A contemporary boutique hotel in Tiruchirappalli,
+where modern luxury meets the soul of Tamil Nadu.
+</p>
+
+</div>
+
+<div>
+
+<h4>EXPLORE</h4>
+
+<a href="#stay">Rooms</a>
+<a href="#dining">Dining</a>
+<a href="#experience">Experience</a>
+<a href="#gallery">Gallery</a>
+
+</div>
+
+<div>
+
+<h4>SMART STAY</h4>
+
+<a href="#smart">AI Concierge</a>
+<a href="#smart">Smart Rooms</a>
+<a href="#smart">AI Dining</a>
+<a href="#smart">Smart Energy</a>
+
+</div>
+
+<div>
+
+<h4>CONTACT</h4>
+
+<p>
+Tiruchirappalli<br>
+Tamil Nadu, India
+</p>
+
+<p>
++91 98765 43210<br>
+stay@auranila.com
+</p>
+
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 AURA NILA. Concept website for academic project.
+</div>
+
+</footer>
+
+
+<!-- AI CHAT -->
+
+<button class="ai-button" onclick="toggleAI()">✦</button>
+
+<div class="ai-chat" id="aiChat">
+
+<div class="ai-header">
+
+<h3>Nila AI</h3>
+
+<p>Your personal hotel concierge</p>
+
+</div>
+
+<div class="ai-body">
+
+<p>
+Hello! I'm Nila, your AI concierge.
+How can I help you plan your stay?
+</p>
+
+<div class="ai-options">
+
+<button onclick="aiAnswer('room')">
+🏨 Help me choose a room
+</button>
+
+<button onclick="aiAnswer('food')">
+🍽 Recommend food
+</button>
+
+<button onclick="aiAnswer('places')">
+📍 Places to visit
+</button>
+
+<button onclick="aiAnswer('wellness')">
+🌿 Wellness experience
+</button>
+
+</div>
+
+<div class="ai-response" id="aiResponse"></div>
+
+</div>
+
+</div>
+
+
+<!-- BOOKING MODAL -->
+
+<div class="modal" id="bookingModal">
+
+<div class="modal-box">
+
+<span class="close" onclick="closeBooking()">×</span>
+
+<h2>Book Your Stay</h2>
+
+<p>Begin your AURA NILA experience.</p>
+
+<input type="text" placeholder="Full Name">
+
+<input type="email" placeholder="Email Address">
+
+<input type="tel" placeholder="Phone Number">
+
+<select>
+<option>Aura Room</option>
+<option>Nila Suite</option>
+<option>Heritage Suite</option>
+</select>
+
+<input type="date">
+
+<input type="date">
+
+<button onclick="confirmBooking()">
+CONFIRM BOOKING
+</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* BOOKING */
+
+function openBooking(){
+
+document.getElementById("bookingModal").style.display="flex";
+
+}
+
+function closeBooking(){
+
+document.getElementById("bookingModal").style.display="none";
+
+}
+
+function confirmBooking(){
+
+alert(
+"Thank you for choosing AURA NILA! Your booking request has been received."
+);
+
+closeBooking();
+
+}
+
+
+/* AI CONCIERGE */
+
+function toggleAI(){
+
+const chat=document.getElementById("aiChat");
+
+if(chat.style.display==="block"){
+
+chat.style.display="none";
+
+}else{
+
+chat.style.display="block";
+
+}
+
+}
+
+
+function aiAnswer(type){
+
+const response=document.getElementById("aiResponse");
+
+response.style.display="block";
+
+if(type==="room"){
+
+response.innerHTML=
+"<strong>Nila AI:</strong> For a business traveller, I recommend the Aura Room. For couples or longer stays, the Nila Suite offers more space and comfort.";
+
+}
+
+if(type==="food"){
+
+response.innerHTML=
+"<strong>Nila AI:</strong> Try our signature South Indian breakfast and chef-curated Tamil-inspired dishes at Nila Table.";
+
+}
+
+if(type==="places"){
+
+response.innerHTML=
+"<strong>Nila AI:</strong> I recommend exploring the Rockfort area, Sri Ranganathaswamy Temple and the cultural attractions around Tiruchirappalli.";
+
+}
+
+if(type==="wellness"){
+
+response.innerHTML=
+"<strong>Nila AI:</strong> Start with a morning pool session followed by meditation in our AI Wellness Lounge.";
+
+}
+
+}
+
+
+/* CLOSE MODAL WHEN CLICKING OUTSIDE */
+
+window.onclick=function(event){
+
+const modal=document.getElementById("bookingModal");
+
+if(event.target===modal){
+
+closeBooking();
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
+```
