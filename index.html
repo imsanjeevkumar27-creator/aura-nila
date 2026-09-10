@@ -1,0 +1,1279 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>STORY OF TEA</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f8f4ec;
+    color:#26382b;
+}
+
+/* NAVBAR */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 7%;
+    background:white;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    letter-spacing:2px;
+    color:#174d32;
+}
+
+nav a{
+    text-decoration:none;
+    color:#26382b;
+    margin-left:25px;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#b47a38;
+}
+
+.order-btn{
+    background:#174d32;
+    color:white!important;
+    padding:12px 22px;
+    border-radius:25px;
+}
+
+/* HERO */
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:70px 7%;
+    background:linear-gradient(120deg,#f7f1e5,#e7eee5);
+}
+
+.hero-text{
+    width:50%;
+}
+
+.hero-text small{
+    color:#b47a38;
+    letter-spacing:4px;
+}
+
+.hero-text h1{
+    font-size:65px;
+    line-height:1.05;
+    margin:20px 0;
+    color:#174d32;
+}
+
+.hero-text p{
+    font-size:18px;
+    line-height:1.7;
+    max-width:520px;
+    color:#555;
+}
+
+.hero-buttons{
+    margin-top:30px;
+}
+
+.primary-btn,
+.secondary-btn{
+    display:inline-block;
+    padding:15px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    margin-right:10px;
+    font-weight:bold;
+}
+
+.primary-btn{
+    background:#174d32;
+    color:white;
+}
+
+.secondary-btn{
+    border:2px solid #174d32;
+    color:#174d32;
+}
+
+.hero-image{
+    width:42%;
+    height:500px;
+    border-radius:250px 250px 30px 30px;
+    background:url("https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=900&q=80")
+    center/cover;
+    box-shadow:0 25px 60px rgba(0,0,0,.2);
+}
+
+/* GENERAL */
+section{
+    padding:90px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title small{
+    color:#b47a38;
+    letter-spacing:3px;
+}
+
+.section-title h2{
+    color:#174d32;
+    font-size:42px;
+    margin-top:10px;
+}
+
+/* TEA MOOD */
+.mood-section{
+    background:white;
+}
+
+.moods{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.mood{
+    border:none;
+    background:#f7f1e5;
+    padding:22px 30px;
+    border-radius:20px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.mood:hover{
+    transform:translateY(-7px);
+    background:#e7eee5;
+}
+
+.mood-result{
+    margin:35px auto 0;
+    max-width:600px;
+    padding:25px;
+    text-align:center;
+    background:#174d32;
+    color:white;
+    border-radius:20px;
+    display:none;
+}
+
+.mood-result h3{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+/* MENU */
+.menu-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card-image{
+    height:250px;
+    background-size:cover;
+    background-position:center;
+}
+
+.tea1{
+    background-image:url("https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=800&q=80");
+}
+
+.tea2{
+    background-image:url("https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=800&q=80");
+}
+
+.tea3{
+    background-image:url("https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80");
+}
+
+.card-content{
+    padding:25px;
+}
+
+.card-content h3{
+    color:#174d32;
+    font-size:23px;
+    margin-bottom:10px;
+}
+
+.card-content p{
+    color:#777;
+    line-height:1.5;
+}
+
+.price{
+    margin-top:15px;
+    color:#b47a38;
+    font-size:21px;
+    font-weight:bold;
+}
+
+
+/* EXTRA OUR COLLECTION TEAS */
+.tea4{
+    background-image:url("https://images.unsplash.com/photo-1597318181409-cf64d0f5e8b3?auto=format&fit=crop&w=800&q=80");
+}
+.tea5{
+    background-image:url("https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=800&q=80");
+}
+.tea6{
+    background-image:url("https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&w=800&q=80");
+}
+.collection-tag{
+    display:inline-block;
+    color:#b47a38;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+.collection-order{
+    width:100%;
+    margin-top:20px;
+    padding:12px 16px;
+    border:none;
+    border-radius:30px;
+    background:#174d32;
+    color:white;
+    font-size:14px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+.collection-order:hover{
+    background:#b47a38;
+    transform:translateY(-2px);
+}
+.collection-intro{
+    margin-top:15px;
+    color:#777;
+    line-height:1.6;
+}
+
+/* TEA OF THE DAY */
+.special{
+    background:#174d32;
+    color:white;
+    text-align:center;
+}
+
+.special h2{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.special p{
+    font-size:18px;
+    color:#e5e5e5;
+}
+
+.special-price{
+    margin:25px 0;
+    font-size:32px;
+    color:#d8ad6a;
+}
+
+.special-btn{
+    display:inline-block;
+    padding:15px 30px;
+    background:#d8ad6a;
+    color:#174d32;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* BUILD YOUR TEA */
+.builder{
+    background:#f1e8d8;
+}
+
+.builder-box{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.option{
+    margin-bottom:25px;
+}
+
+.option label{
+    display:block;
+    font-weight:bold;
+    color:#174d32;
+    margin-bottom:10px;
+}
+
+select{
+    width:100%;
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    font-size:16px;
+}
+
+.build-btn{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:30px;
+    background:#174d32;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.build-result{
+    margin-top:25px;
+    text-align:center;
+    padding:20px;
+    background:#e7eee5;
+    border-radius:18px;
+    display:none;
+}
+
+/* STORY */
+.story{
+    display:flex;
+    align-items:center;
+    gap:70px;
+    background:#174d32;
+    color:white;
+}
+
+.story-image{
+    width:45%;
+    height:450px;
+    border-radius:30px;
+    background:url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80")
+    center/cover;
+}
+
+.story-content{
+    width:50%;
+}
+
+.story-content small{
+    color:#d8ad6a;
+    letter-spacing:3px;
+}
+
+.story-content h2{
+    font-size:45px;
+    margin:20px 0;
+}
+
+.story-content p{
+    line-height:1.8;
+    color:#e5e5e5;
+}
+
+/* OFFER */
+.offer{
+    text-align:center;
+    background:#eee4d3;
+}
+
+.offer h2{
+    font-size:42px;
+    color:#174d32;
+}
+
+.offer p{
+    margin:15px 0 25px;
+    color:#666;
+}
+
+/* COUNTDOWN */
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin:25px 0;
+}
+
+.time{
+    background:#174d32;
+    color:white;
+    padding:15px 20px;
+    border-radius:12px;
+    min-width:75px;
+}
+
+.time span{
+    display:block;
+    font-size:25px;
+    font-weight:bold;
+}
+
+/* STORIES */
+.customer-stories{
+    background:white;
+}
+
+.story-cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.story-card{
+    background:#f8f4ec;
+    padding:25px;
+    border-radius:20px;
+}
+
+.story-card p{
+    line-height:1.7;
+    color:#666;
+}
+
+.story-card h4{
+    margin-top:15px;
+    color:#174d32;
+}
+
+/* CONTACT */
+.contact{
+    text-align:center;
+}
+
+.contact-box{
+    max-width:600px;
+    margin:auto;
+}
+
+.contact input,
+.contact textarea{
+    width:100%;
+    padding:15px;
+    margin:8px 0;
+    border:1px solid #ddd;
+    border-radius:12px;
+    outline:none;
+}
+
+.contact textarea{
+    height:130px;
+}
+
+.submit-btn{
+    border:none;
+    background:#174d32;
+    color:white;
+    padding:15px 35px;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+    background:#102f20;
+    color:white;
+    padding:40px 7%;
+    text-align:center;
+}
+
+footer h2{
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+footer p{
+    color:#ccc;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        text-align:center;
+    }
+
+    nav a{
+        margin:5px;
+        font-size:13px;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-text{
+        width:100%;
+    }
+
+    .hero-text h1{
+        font-size:45px;
+    }
+
+    .hero-image{
+        width:90%;
+        margin-top:40px;
+    }
+
+    .menu-container,
+    .story-cards{
+        grid-template-columns:1fr;
+    }
+
+    .story{
+        flex-direction:column;
+    }
+
+    .story-image,
+    .story-content{
+        width:100%;
+    }
+
+    .story-content h2{
+        font-size:35px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+
+<div class="logo">
+STORY OF TEA
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#mood">Tea Mood</a>
+<a href="#menu">Menu</a>
+<a href="#builder">Build Tea</a>
+<a href="#story">Our Story</a>
+<a href="#contact">Contact</a>
+<a href="#menu" class="order-btn">Order Now</a>
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+<div class="hero-text">
+
+<small>WELCOME TO STORY OF TEA</small>
+
+<h1>
+Every Cup<br>
+Tells a Story.
+</h1>
+
+<p>
+Not just tea. Not just a drink.
+A little moment of happiness,
+crafted especially for you.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#mood" class="primary-btn">
+Find My Tea
+</a>
+
+<a href="#menu" class="secondary-btn">
+Explore Menu
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image"></div>
+
+</section>
+
+
+<!-- MOOD -->
+<section class="mood-section" id="mood">
+
+<div class="section-title">
+
+<small>DISCOVER YOUR PERFECT CUP</small>
+
+<h2>What's Your Tea Mood?</h2>
+
+</div>
+
+<div class="moods">
+
+<button class="mood" onclick="chooseMood('Relaxing')">
+😌 Relaxing
+</button>
+
+<button class="mood" onclick="chooseMood('Energetic')">
+⚡ Energetic
+</button>
+
+<button class="mood" onclick="chooseMood('Happy')">
+😊 Happy
+</button>
+
+<button class="mood" onclick="chooseMood('Romantic')">
+❤️ Romantic
+</button>
+
+<button class="mood" onclick="chooseMood('Refreshing')">
+🌿 Refreshing
+</button>
+
+</div>
+
+<div class="mood-result" id="moodResult"></div>
+
+</section>
+
+
+<!-- OUR COLLECTION -->
+<section id="menu">
+
+<div class="section-title">
+    <small>OUR COLLECTION</small>
+    <h2>Signature Tea Collection</h2>
+    <p class="collection-intro">
+        Six unique flavours. Six different stories. Find yours. ☕
+    </p>
+</div>
+
+<div class="menu-container">
+
+<!-- TEA 1 -->
+<div class="card">
+<div class="card-image tea1"></div>
+<div class="card-content">
+
+<span class="collection-tag">BEST SELLER</span>
+
+<h3>Classic Masala Tea</h3>
+
+<p>
+A warm blend of black tea, aromatic spices
+and authentic Indian flavours.
+</p>
+
+<div class="price">₹120</div>
+
+<button class="collection-order"
+onclick="alert('Classic Masala Tea added to your order! ☕')">
+Order Now
+</button>
+
+</div>
+</div>
+
+
+<!-- TEA 2 -->
+<div class="card">
+<div class="card-image tea2"></div>
+<div class="card-content">
+
+<span class="collection-tag">FRESH & LIGHT</span>
+
+<h3>Premium Green Tea</h3>
+
+<p>
+Fresh, light and naturally refreshing —
+perfect for a peaceful moment.
+</p>
+
+<div class="price">₹150</div>
+
+<button class="collection-order"
+onclick="alert('Premium Green Tea added to your order! 🌿')">
+Order Now
+</button>
+
+</div>
+</div>
+
+
+<!-- TEA 3 -->
+<div class="card">
+<div class="card-image tea3"></div>
+<div class="card-content">
+
+<span class="collection-tag">ROYAL CHOICE</span>
+
+<h3>Royal Milk Tea</h3>
+
+<p>
+Smooth, creamy and rich tea crafted
+for a luxurious experience.
+</p>
+
+<div class="price">₹160</div>
+
+<button class="collection-order"
+onclick="alert('Royal Milk Tea added to your order! 👑')">
+Order Now
+</button>
+
+</div>
+</div>
+
+
+<!-- TEA 4 -->
+<div class="card">
+<div class="card-image tea4"></div>
+<div class="card-content">
+
+<span class="collection-tag">SIGNATURE</span>
+
+<h3>Saffron Rose Chai</h3>
+
+<p>
+A beautiful combination of saffron,
+rose and premium Indian tea.
+</p>
+
+<div class="price">₹180</div>
+
+<button class="collection-order"
+onclick="alert('Saffron Rose Chai added to your order! 🌹')">
+Order Now
+</button>
+
+</div>
+</div>
+
+
+<!-- TEA 5 -->
+<div class="card">
+<div class="card-image tea5"></div>
+<div class="card-content">
+
+<span class="collection-tag">COOL & REFRESHING</span>
+
+<h3>Peach Iced Tea</h3>
+
+<p>
+Juicy peach flavour blended with
+refreshing chilled tea.
+</p>
+
+<div class="price">₹170</div>
+
+<button class="collection-order"
+onclick="alert('Peach Iced Tea added to your order! 🍑')">
+Order Now
+</button>
+
+</div>
+</div>
+
+
+<!-- TEA 6 -->
+<div class="card">
+<div class="card-image tea6"></div>
+<div class="card-content">
+
+<span class="collection-tag">PREMIUM</span>
+
+<h3>Chocolate Chai</h3>
+
+<p>
+Rich chocolate combined with
+warm traditional chai flavours.
+</p>
+
+<div class="price">₹190</div>
+
+<button class="collection-order"
+onclick="alert('Chocolate Chai added to your order! 🍫')">
+Order Now
+</button>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TEA OF THE DAY -->
+<section class="special">
+
+<h2>✨ Tea of the Day ✨</h2>
+
+<p>
+Today's special story is waiting for you.
+</p>
+
+<h3 class="special-price">
+Saffron Rose Chai — ₹149
+</h3>
+
+<a href="#builder" class="special-btn">
+Create My Cup
+</a>
+
+</section>
+
+
+<!-- BUILD YOUR TEA -->
+<section class="builder" id="builder">
+
+<div class="section-title">
+
+<small>MAKE IT YOURS</small>
+
+<h2>Build Your Own Tea 🫖</h2>
+
+</div>
+
+<div class="builder-box">
+
+<div class="option">
+
+<label>Choose Your Tea</label>
+
+<select id="teaBase">
+
+<option value="120">Classic Masala Tea</option>
+<option value="150">Premium Green Tea</option>
+<option value="160">Royal Milk Tea</option>
+<option value="170">Saffron Tea</option>
+
+</select>
+
+</div>
+
+
+<div class="option">
+
+<label>Choose Your Sweetness</label>
+
+<select id="sweetness">
+
+<option>Less Sugar</option>
+<option>Normal Sugar</option>
+<option>Extra Sweet</option>
+
+</select>
+
+</div>
+
+
+<div class="option">
+
+<label>Choose Your Flavour</label>
+
+<select id="flavour">
+
+<option value="0">Classic</option>
+<option value="20">Cardamom +₹20</option>
+<option value="25">Rose +₹25</option>
+<option value="30">Saffron +₹30</option>
+
+</select>
+
+</div>
+
+
+<button class="build-btn" onclick="buildTea()">
+Create My Perfect Tea
+</button>
+
+<div class="build-result" id="buildResult"></div>
+
+</div>
+
+</section>
+
+
+<!-- STORY -->
+<section class="story" id="story">
+
+<div class="story-image"></div>
+
+<div class="story-content">
+
+<small>OUR STORY</small>
+
+<h2>
+More Than Tea.<br>
+It's a Story.
+</h2>
+
+<p>
+STORY OF TEA was created with one simple idea:
+to turn an everyday cup of tea into a memorable
+experience.
+</p>
+
+<br>
+
+<p>
+From carefully selected tea leaves to every
+handcrafted blend, we believe that great tea
+creates moments worth remembering.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- OFFER -->
+<section class="offer">
+
+<h2>🎁 Your First Story</h2>
+
+<p>
+Get 20% OFF on your first order.
+Your first cup deserves a special beginning.
+</p>
+
+<div class="countdown">
+
+<div class="time">
+<span id="days">00</span>
+Days
+</div>
+
+<div class="time">
+<span id="hours">00</span>
+Hours
+</div>
+
+<div class="time">
+<span id="minutes">00</span>
+Min
+</div>
+
+<div class="time">
+<span id="seconds">00</span>
+Sec
+</div>
+
+</div>
+
+<a href="#contact" class="primary-btn">
+Get My Tea
+</a>
+
+</section>
+
+
+<!-- CUSTOMER STORIES -->
+<section class="customer-stories">
+
+<div class="section-title">
+
+<small>FROM OUR CUSTOMERS</small>
+
+<h2>Tea Stories ❤️</h2>
+
+</div>
+
+<div class="story-cards">
+
+<div class="story-card">
+
+<p>
+“STORY OF TEA became my favourite evening
+ritual. The Royal Milk Tea is amazing!”
+</p>
+
+<h4>— Priya</h4>
+
+</div>
+
+
+<div class="story-card">
+
+<p>
+“The tea mood feature is such a cool idea.
+It actually helped me choose my tea.”
+</p>
+
+<h4>— Arjun</h4>
+
+</div>
+
+
+<div class="story-card">
+
+<p>
+“I created my own saffron tea and loved it.
+It felt like my personal cup.”
+</p>
+
+<h4>— Ananya</h4>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+<div class="section-title">
+
+<small>GET IN TOUCH</small>
+
+<h2>Let's Talk Tea ☕</h2>
+
+</div>
+
+<div class="contact-box">
+
+<input type="text" id="name" placeholder="Your Name">
+
+<input type="email" id="email" placeholder="Your Email">
+
+<textarea id="message"
+placeholder="Tell us your tea story..."></textarea>
+
+<button class="submit-btn" onclick="sendMessage()">
+Send My Story
+</button>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+<h2>STORY OF TEA</h2>
+
+<p>
+Every Cup Tells a Story.
+</p>
+
+<br>
+
+<p>
+© 2026 STORY OF TEA. All Rights Reserved.
+</p>
+
+</footer>
+
+
+<script>
+
+/* TEA MOOD */
+function chooseMood(mood){
+
+let result = document.getElementById("moodResult");
+
+let tea = "";
+
+if(mood === "Relaxing"){
+tea = "Royal Milk Tea 👑";
+}
+
+else if(mood === "Energetic"){
+tea = "Premium Green Tea ⚡";
+}
+
+else if(mood === "Happy"){
+tea = "Classic Masala Tea 😊";
+}
+
+else if(mood === "Romantic"){
+tea = "Saffron Rose Chai ❤️";
+}
+
+else{
+tea = "Premium Green Tea 🌿";
+}
+
+result.style.display = "block";
+
+result.innerHTML = `
+<h3>Your Tea Match: ${tea}</h3>
+<p>
+Your mood has a story. Let your tea tell it. ☕
+</p>
+`;
+
+}
+
+
+/* BUILD YOUR TEA */
+function buildTea(){
+
+let base =
+Number(document.getElementById("teaBase").value);
+
+let teaName =
+document.getElementById("teaBase")
+.options[
+document.getElementById("teaBase").selectedIndex
+].text;
+
+let sweetness =
+document.getElementById("sweetness").value;
+
+let flavourSelect =
+document.getElementById("flavour");
+
+let flavour =
+Number(flavourSelect.value);
+
+let flavourName =
+flavourSelect.options[
+flavourSelect.selectedIndex
+].text;
+
+let total = base + flavour;
+
+let result =
+document.getElementById("buildResult");
+
+result.style.display = "block";
+
+result.innerHTML = `
+<h3>✨ Your Tea Is Ready!</h3>
+<p><b>${teaName}</b></p>
+<p>${sweetness} • ${flavourName}</p>
+<h3>Total: ₹${total}</h3>
+<br>
+<button class="special-btn"
+onclick="alert('Your custom tea has been added to your order! ☕')">
+Order This Tea
+</button>
+`;
+
+}
+
+
+/* COUNTDOWN */
+let offerEnd =
+new Date().getTime() + (2 * 24 * 60 * 60 * 1000);
+
+setInterval(function(){
+
+let now = new Date().getTime();
+
+let distance = offerEnd - now;
+
+let days =
+Math.floor(distance / (1000 * 60 * 60 * 24));
+
+let hours =
+Math.floor(
+(distance % (1000 * 60 * 60 * 24))
+/ (1000 * 60 * 60)
+);
+
+let minutes =
+Math.floor(
+(distance % (1000 * 60 * 60))
+/ (1000 * 60)
+);
+
+let seconds =
+Math.floor(
+(distance % (1000 * 60))
+/ 1000
+);
+
+document.getElementById("days").innerText =
+String(days).padStart(2,"0");
+
+document.getElementById("hours").innerText =
+String(hours).padStart(2,"0");
+
+document.getElementById("minutes").innerText =
+String(minutes).padStart(2,"0");
+
+document.getElementById("seconds").innerText =
+String(seconds).padStart(2,"0");
+
+},1000);
+
+
+/* CONTACT */
+function sendMessage(){
+
+let name =
+document.getElementById("name").value;
+
+if(name.trim() === ""){
+alert("Please enter your name ☕");
+return;
+}
+
+alert(
+"Thank you " + name +
+"! Your tea story has been received. ❤️☕"
+);
+
+}
+
+</script>
+
+</body>
+</html>
+```
